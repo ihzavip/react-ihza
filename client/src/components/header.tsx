@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <header className="text-gray-600 body-font">
@@ -18,7 +20,7 @@ export default function Header() {
           <span className="ml-3 text-xl">Tailblocks</span>
         </a>
         <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto">
-          <a className="mr-5 hover:text-gray-900">First Link</a>
+          <Link to={"/login"}>Login</Link>
           <a className="mr-5 hover:text-gray-900">Second Link</a>
           <a className="mr-5 hover:text-gray-900">Third Link</a>
           <a className="mr-5 hover:text-gray-900">Fourth Link</a>
