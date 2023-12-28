@@ -1,4 +1,5 @@
-import Login from "./pages/login";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import MainPage from "./pages/mainPage";
 
 import { Route, Routes } from "react-router-dom";
@@ -8,7 +9,8 @@ function App() {
     <>
       {/* Other routes */}
       <Routes>
-        <Route path="/login" Component={Login} />
+        <Route path="/Login" Component={Login} />
+        <Route path="/Register" Component={Register} />
         <Route path="/" Component={MainPage} />
       </Routes>
     </>
