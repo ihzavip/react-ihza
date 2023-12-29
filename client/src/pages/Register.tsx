@@ -28,7 +28,7 @@ function Register() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-    }).then((res: any) => {
+    }).then((res: unknown) => {
         console.log(res)
     })
   };

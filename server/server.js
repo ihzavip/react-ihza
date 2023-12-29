@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-// app.use(express.json());
+app.use(express.json());
 app.use(cors());
 
 const urlEncodedParser = bodyParser.urlencoded({ extended: false });
@@ -31,10 +31,13 @@ app.get("/users", (req, res) => {
 });
 
 app.post("/register", urlEncodedParser, (req, res) => {
+  console.log("🚀 ~ req:", req.body)
   const { email, username, password } = req.body;
 
-  const sql = "INSERT INTO users (email, username, password, created_at) VALUES (?, ?, ?, ?)";
-  const values = [email, username, password];
+  const currentDate = new Date();
+  const sql = "INSERT INTO users (email, name, password, created_at) VALUES (?, ?, ?, ?)";
+  const values = [email, username, password, currentDate];
+  console.log(values);
 
   db.query(sql, values, (err, result) => {
     if (err) {
